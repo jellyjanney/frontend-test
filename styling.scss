@@ -1,0 +1,150 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500";
+
+$white: #ffffff;
+$light: #D0D0D0;
+$dark:  #000000;
+$red:   #ff0000;
+$pagin: #DD534C;
+
+body{
+        background-color: $white;
+        font: {
+                family: 'Roboto', sans-serif;
+                size: 16px;
+                weight: 400;
+        };
+        line-height: 1.5;
+        max-width: 1320px;
+        width: auto;
+        padding: 30px 0;
+        margin: {
+                left: auto;
+                right: auto;
+        };
+        width: 100%;
+}
+.row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: auto;
+        padding: 30px 0;
+        margin: {
+                left: -15px;
+                right: -15px;
+        };
+}
+.card{
+        display: inline-flex;
+        width: 318px;
+        height: auto;
+        padding: 0;
+        margin: 8px;
+        border: 0 solid $dark;
+        overflow: hidden;
+        
+        &:hover{
+                box-shadow: 0 0 8px transparentize($color: $dark, $amount: 0.7);
+        }
+        &-body{
+                border: 0 solid $white;
+                padding: 16px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                height: auto;
+                text-decoration: none;
+                overflow: hidden;
+                
+                &__thumbnail{
+                        display: block;
+                        width: 100%;
+                        height: 300px;
+                        border: 0 solid $light;
+                        margin: 0;
+                        background-color: $light;
+                        overflow: hidden;
+                        text-align: center;
+                        vertical-align: middle;
+                        img{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                        }
+                }
+                &__detail{
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        height: auto;
+                        color: $dark;
+                        margin: 0;
+                        padding: 16px 0 0;
+                        *{
+                                width: 100%;
+                                margin: 0;
+                        }
+                        .rating{
+                                margin: {
+                                        bottom: 16px;
+                                };
+                                color: $red;
+                                font-size: 20px;
+                        }
+                        .currency{
+                                font-weight: 500;
+                                font-size: 24px;
+                        }
+                }
+                &-title {
+                        color: #666;
+                        font-size: 20px;
+                        font-weight: 500;
+                }
+        }
+}
+
+.pagin{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        li{
+                display: inline-flex;
+                flex-wrap: wrap;
+                width: 48px;
+                height: 48px;
+                align-items: center;
+                justify-content: center;
+                background-color: transparentize($color: $pagin, $amount: 0.85);
+                margin: 0 4px;
+                a{
+                        display: block;
+                        text-decoration: none;
+                        color: $dark;
+                        font-size: 16px;
+                        font-weight: 500;        
+                }
+                
+                
+                &.nav{
+                        background-color: transparentize($color: $light, $amount: 0);
+                        a{
+                                color: $white;
+                        }
+                        
+                }
+                
+                &:hover,
+                &:active,
+                &.active{
+                        background-color: transparentize($color: $pagin, $amount: 0);
+                }
+        }
+        
+}
